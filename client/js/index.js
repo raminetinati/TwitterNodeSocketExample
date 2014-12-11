@@ -3,7 +3,7 @@ function main(){
 
     //SOCKET IOCODE
 
-    var socket = io.connect('http://sociam.cloudapp.net:9001');
+    var socket = io.connect('http://ServerAddress:9001');
     //var socket = io.connect('http://sociamvm-app-001.ecs.soton.ac.uk:90
     socket.on('tweets', function (tweet) {
 
