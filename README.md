@@ -16,6 +16,8 @@ Dependencies
 
 This application requires
 
-Node.JS
-Socket.io
-Twit
+*Node.JS 
+
+*Socket.io
+
+*Twit
