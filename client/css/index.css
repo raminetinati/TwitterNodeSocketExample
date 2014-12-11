@@ -1,0 +1,92 @@
+
+svg {
+
+  width: 100%;
+  height: 100%;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #FFFFFF;
+  color: #FFFFFF;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  fill: none;
+  stroke: #FFFFFF;
+}
+
+.x.axis line {
+  fill: none;
+  stroke: #FFFFFF;
+  shape-rendering: crispEdges;
+}
+
+
+.line {
+  fill: none;
+  stroke: red;
+  stroke-width: 1.5px;
+}
+
+#graphDiv {
+  position: absolute;
+  top:0;
+  right: 0;
+  z-index:4;
+  width: 70%;
+  height: 60%;
+  border: 1px;
+}
+
+#collageContainer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index:5;
+
+}
+
+#wordCloudDiv {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index:6;
+}
+
+#statsDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:30%;
+  height:70%;
+  z-index:7;
+}
+
+#liveStreamTextDiv {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width:30%;
+  height:30%;
+  z-index:7;
+}
+
+
+#singleCascadeGraph{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width:70%;
+  height:38% ;
+  z-index:7;
+}
+
+.thumbimg {
+    max-height: 30px;
+
+}
