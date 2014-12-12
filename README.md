@@ -16,6 +16,8 @@ Dependencies
 
 This application requires
 
+*HTTP Server
+
 *Node.JS 
 
 *Socket.io
