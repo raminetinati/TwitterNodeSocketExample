@@ -11,6 +11,9 @@ To run, run node app/TwitterServer.js
 Note: You need to enter your Twitter Client credentials (public key, secret key, access token) in order to enable the stream to run.
 
 
+For a live demo, go here: http://sociam.cloudapp.net/twitterImageDemo
+
+
 Dependencies
 ===========
 
