@@ -17,6 +17,8 @@ node app/NodeServer.js
 To Configure
 ===========
 
+**Server**
+
 Note: You need to enter your Twitter Client credentials (public key, secret key, access token) in order to enable the stream to run.
 
 Go to http://dev.twitter.com and create a new application.
@@ -34,8 +36,19 @@ var T = new Twit({
 
 The 'REQUIRED' variables need to be repaced with your Twitter credentials.
 
+**Client**
 
+You need to edit the client javascript file in order point to the server address. Navigate to your Git repository and edit the file by:
 
+```
+vi client/js/index.js
+```
+
+Now replace the following like with your server address:
+
+```
+    var socket = io.connect('http://ServerAddress:9001');
+```
 
 Live Demo
 ===========
