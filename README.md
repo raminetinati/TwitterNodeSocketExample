@@ -51,7 +51,7 @@ vi client/js/index.js
 var socket = io.connect('http://ServerAddress:9001');
 ```
 
-3. Now either copy the entire client folder into your `/var/www/` folder, or create a symbolic link to the git folder
+3. Now either copy the entire client folder into your `/var/www/` folder, or create a symbolic link to the `client/' folder
 
 Live Demo
 ===========
