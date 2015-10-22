@@ -60,11 +60,27 @@ For a live demo, go here: http://jxt0.ecs.soton.ac.uk/twitter
 Dependencies
 ===========
 
-This application requires the following Node Packages. 
+**Server**
+
+This node application requires the following Node Packages. 
 
 * HTTP Server
 * Node.JS 
 * Socket.io
 * Twit
 
-To install these, please use the NPM (Node Package Manager).
+To install these, please use the NPM (Node Package Manager). e.g.
+
+```
+sudo npm install -g socket.io
+```
+
+**Client**
+
+In order to access the Web client, you need to install Apache2. In order to do this, please run the following as sudo:
+
+```
+sudo apt-get update
+sudo apt-get install apache2
+```
+
