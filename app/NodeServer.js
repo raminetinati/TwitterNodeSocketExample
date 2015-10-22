@@ -16,7 +16,7 @@ var T = new Twit({
   , access_token_secret:  'REQUIRED'
 });
 
-T.get('search/tweets', { q: '#webwewantfest', count: 100 }, function(err, data, response) {
+T.get('search/tweets', { q: '#datascience', count: 100 }, function(err, data, response) {
   //console.log(data)
 });
 
