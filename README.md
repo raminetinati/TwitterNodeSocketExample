@@ -14,14 +14,23 @@ Go to http://dev.twitter.com and create a new application.
 
 Once you have obtained your credentials, edit the NodeServer.js file:
 
+```
 var T = new Twit({
     consumer_key:         'REQUIRED'
   , consumer_secret:      'REQUIRED'
   , access_token:         'REQUIRED'
   , access_token_secret:  'REQUIRED'
 });
+```
 
-The 'REQUIRED' strings need to be repaced with your Twitter credentials.
+The 'REQUIRED' variables need to be repaced with your Twitter credentials.
+
+
+
+
+Live Demo
+===========
+
 
 For a live demo, go here: http://jxt0.ecs.soton.ac.uk/twitter
 
@@ -29,14 +38,11 @@ For a live demo, go here: http://jxt0.ecs.soton.ac.uk/twitter
 Dependencies
 ===========
 
-This application requires the following Node Packages. P
+This application requires the following Node Packages. 
 
-*HTTP Server
-
-*Node.JS 
-
-*Socket.io
-
-*Twit
+* HTTP Server
+* Node.JS 
+* Socket.io
+* Twit
 
 To install these, please use the NPM (Node Package Manager).
