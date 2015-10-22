@@ -4,9 +4,18 @@ TwitterNodeSocketExample
 An example application connecting to Twitter Streaming API, and then sending results to HTML page using socket.io
 
 To Use
-======
+===========
 
-To run, run node app/TwitterServer.js
+To run: use either `node` or `forever start` 
+
+e.g.
+
+```
+node app/NodeServer.js
+```
+
+To Configure
+===========
 
 Note: You need to enter your Twitter Client credentials (public key, secret key, access token) in order to enable the stream to run.
 
