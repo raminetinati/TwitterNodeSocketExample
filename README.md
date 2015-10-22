@@ -32,8 +32,11 @@ Dependencies
 This application requires the following Node Packages. P
 
 *HTTP Server
+
 *Node.JS 
+
 *Socket.io
+
 *Twit
 
 To install these, please use the NPM (Node Package Manager).
