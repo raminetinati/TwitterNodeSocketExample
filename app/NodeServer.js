@@ -16,24 +16,29 @@ var T = new Twit({
   , access_token_secret:  'REQUIRED'
 });
 
+//###################################
+//If you want to use the search API (REST) then you can use this! line below, 
+//In order to get data, you need to periodically pull data. Create an interval timer!
 // T.get('search/tweets', { q: '#datascience', count: 100 }, function(err, data, response) {
 //   //console.log(data)
 // });
 
-var stream = T.stream('statuses/sample');
 
+//######################
+//Here you can either use a random sample, or search for something specific!
+//var stream = T.stream('statuses/sample');
 var stream = T.stream('statuses/filter', { track: ['datascience', 'data', 'data science'] });
 //var stream = T.stream('statuses/filter', { track: ['twitpic', 'http://img', 'img'] });
 
-
-
+//##############################
+//this is just a test socket, but you could use this to get data as ell...!
 // io.on('connection', function (socket) {
 //      io.emit('tweets', { hello: 'world' });
 // });
 
-console.log("Emitting Tweets");
 
 
+console.log("INFO: Got to the point where stream is about to emit to tweets");
 
 stream.on('tweet', function (tweet) {
   //console.log(tweet);
