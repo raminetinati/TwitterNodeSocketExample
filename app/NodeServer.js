@@ -16,13 +16,14 @@ var T = new Twit({
   , access_token_secret:  'REQUIRED'
 });
 
-T.get('search/tweets', { q: '#datascience', count: 100 }, function(err, data, response) {
-  //console.log(data)
-});
+// T.get('search/tweets', { q: '#datascience', count: 100 }, function(err, data, response) {
+//   //console.log(data)
+// });
 
-//var stream = T.stream('statuses/filter', { track: ['webwewantfest', 'webwewant', 'webweshare'] });
-//var stream = T.stream('statuses/filter', { track: ['twitpic', 'http://img', 'img'] });
 var stream = T.stream('statuses/sample');
+
+var stream = T.stream('statuses/filter', { track: ['datascience', 'data', 'data science'] });
+//var stream = T.stream('statuses/filter', { track: ['twitpic', 'http://img', 'img'] });
 
 
 
