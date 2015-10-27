@@ -33,21 +33,19 @@ var stream = T.stream('statuses/sample');
 console.log("Emitting Tweets");
 
 
+
 stream.on('tweet', function (tweet) {
-    //console.log(tweet);
-    //emitMsg('tweets', tweet);
-    
-    //Here we can do some pre-processing of the data to ensure that the tweet is formatted correctly, etc
-    tweet = preProcessData(tweet);
-    io.emit('tweets',tweet);
-        
-        
-        
+  //console.log(tweet);
+// emitMsg('tweets', tweet);
+    	preProcessData(tweet);
+   		 //io.emit('tweets',tweet);
+        //io.emit('tweets',tweet);
 });
+
 
 //In this function we want to do some pre-processing of the incomming data stream
 function preProcessData(tweet) {
-    var = dataParsed = false;
+    var dataParsed = false;
     var minTweetCharLen = 10;
     //How about a simple check for the length of the tweet
     if((tweet.text).length > minTweetCharLen){
@@ -55,6 +53,8 @@ function preProcessData(tweet) {
         
         //we're now happy, if so, let's make it to send the tweet off
         dataParsed = true;
+    }else{
+    	//console.log('Did not meet requirement')
     }
     
     if(dataParsed){
