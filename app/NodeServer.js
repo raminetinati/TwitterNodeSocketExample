@@ -121,7 +121,7 @@ function updateDatabaseWithTweets(data_rec, source_name){
 
 function loadDatabaseData(socket){
     var response = [];
-    Message.find(function (err, responses) {
+    Tweet.find(function (err, responses) {
         if (err) return console.error(err);
         //console.log(responses);
         try{
