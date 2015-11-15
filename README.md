@@ -87,3 +87,15 @@ sudo apt-get update
 sudo apt-get install apache2
 ```
 
+
+
+
+TO USE WITH MONGODB
+==================
+
+To use with MongoDB you need to install the `Node` package `mongoose`.
+
+```
+sudo npm install -g mongoose
+```
+(remember, if you're installing it on a Microsoft Azure VN, remove the flag `-g')
