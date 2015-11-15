@@ -119,6 +119,21 @@ function updateDatabaseWithTweets(data_rec, source_name){
 }
 
 
+function loadDatabaseData(socket){
+    var response = [];
+    Message.find(function (err, responses) {
+        if (err) return console.error(err);
+        //console.log(responses);
+        try{
+            //Dont want to sent too many responses
+            socket.emit("historic_data", responses.slice((responses.length-5000), (responses.length-1)));
+        }catch(e){
+            //Looks like there isn't that many, a few will do!
+     	    socket.emit("historic_data", responses);
+        }
+    })
+
+}
 
 
 
