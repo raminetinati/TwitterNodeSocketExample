@@ -98,13 +98,28 @@ To use with MongoDB you need to install the `Node` package `mongoose`.
 ```
 sudo npm install -g mongoose
 ```
-(remember, if you're installing it on a Microsoft Azure VN, remove the flag `-g')
+Notes:
 
-For more information and documentation about mongoose, please see: http://mongoosejs.com/
+* if you're installing it on a Microsoft Azure VN, remove the flag `-g')
+* For more information and documentation about mongoose, please see: http://mongoosejs.com/
 
-*In the example give, we are going to be working with the Twitter Stream JSON object. More details can be found here: https://dev.twitter.com/overview/api/tweets*
+*In the example provided in this , we are going to be working with the Twitter Stream JSON object. More details can be found here: https://dev.twitter.com/overview/api/tweets*
 
 **Setting up the Mongoose connection**
+
+We need to import the `mongoose` package and then set up the database connect. If there is an error report it to the console, you'll probably want to know this
+
+```
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://username:password@hostname/databaseName');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+    console.log("connected to database");
+});
+```
+
+
 
 
 
