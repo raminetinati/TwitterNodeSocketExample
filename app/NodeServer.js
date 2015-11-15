@@ -66,6 +66,7 @@ function preProcessData(tweet) {
     
     if(dataParsed){
         io.emit('tweets',tweet);
+        updateDatabaseWithTweets(tweet, "twitterHarvesterByRamine")
     }else{
         //Do something else,
         //If data is neeeded, then could let the front end know?
@@ -98,6 +99,32 @@ var tweetDoc = new mongoose.Schema({
 
 var Message = mongoose.model('Message', tweetDoc); 
 
+function updateDatabaseWithTweets(data_rec, source_name){
+    try{
+        var data = data_rec.content;
+
+        var doc = new Tweet({
+            source: source_name,
+            status: data,
+            });
+
+        doc.save(function(err, doc) {
+        if (err) return console.error(err);
+        });
+        //console.log("Added New Items: "+data);
+
+    }catch(e){
+
+    }
+}
+
+
+
+
+
+
+
+
 
 io.on('connection', function (socket) {
 
@@ -109,23 +136,3 @@ io.on('connection', function (socket) {
 
 
 });
-
-
-
-function loadDatabaseData(socket){
-    var response = [];
-    Message.find(function (err, responses) {
-    if (err) return console.error(err);
-     //console.log(responses);
-     try{
-     socket.emit("historic_data", responses.slice((responses.length-5000), (responses.length-1)));
-        }catch(e){
-
-     	socket.emit("historic_data", responses);
-
-
-        }
-    })
-
-}
-
