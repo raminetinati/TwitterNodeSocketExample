@@ -2,6 +2,7 @@ var Twit = require('twit')
 var app = require('http').createServer(handler);
 var io = require('socket.io')(app);
 
+
 app.listen(9001);
 
 function handler (req, res) {
@@ -71,3 +72,15 @@ function preProcessData(tweet) {
     }
       
 }
+
+
+//--------------Branch: MongoDB-Version
+//Here we are going to be playing with MongoDB.
+//We will look at saving and querying data.
+
+//first, import the necessary package
+var Twit = require('mongoose')
+
+
+
+
