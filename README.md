@@ -99,3 +99,13 @@ To use with MongoDB you need to install the `Node` package `mongoose`.
 sudo npm install -g mongoose
 ```
 (remember, if you're installing it on a Microsoft Azure VN, remove the flag `-g')
+
+For more information and documentation about mongoose, please see: http://mongoosejs.com/
+
+Setting up the Mongoose connection
+=============
+
+In the example give, we are going to be working with the Twitter Stream JSON object. More details can be found here: https://dev.twitter.com/overview/api/tweets
+
+
+
