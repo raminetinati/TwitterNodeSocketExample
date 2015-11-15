@@ -51,11 +51,12 @@ function main(){
 
 //For the MongoDB version:
 
-socket3.emit("load_data","");
+socket.emit("load_data","");
 
-socket3.on('historic_data', function (databaseDump) {
-    
-    
-    
+socket.on('historic_data', function (databaseDump) {
+
+    for(var i=0; i<databaseDump.length; i++){
+        console.log(databaseDump[i].status)
+    }
     
 });
