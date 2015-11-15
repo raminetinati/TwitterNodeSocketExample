@@ -244,6 +244,19 @@ io.on('connection', function (socket) {
 });
 ```
 
+Finally, we need to make sure that this is part of the client code. We need to edit the client's `index.js` file located in '/client/js`
+
+```
+socket3.emit("load_data","");
+
+socket3.on('historic_data', function (databaseDump) {
+
+    for(var i=0; i<databaseDump.length; i++){
+        console.log(databaseDump[i].status)
+    }
+    
+});
+```
 
 
 
@@ -252,11 +265,9 @@ io.on('connection', function (socket) {
 
 
 
-
-
-**Tasks**
+**TUTORIAL Tasks: Things to try**
 
 * Improve the inserting of data so that it happens in batches, rather than one document at a time.
 * Improve the loading function, perform a more richer query to return the URLs of the images within the status object.
-
+* Once the data is with the client, we need to do something with it, rather than just see a pretty console of data....
 
