@@ -206,11 +206,43 @@ We can now update the function `preProcessData(tweet)` and add the call to the `
 
 
 
+**Retrieving Data from MongoDB Collection**
+
+We also want to be able to retrieve data that we're storing. To do this we create a new function `loadDatabaseData()`. This function is going to be called when a user first connects to the application, so we're also going to pass it the `socket` as a parameter, so we can `emit` data when we get our data. 
+
+```
+function loadDatabaseData(socket){
+    var response = [];
+    Tweet.find(function (err, responses) {
+        if (err) return console.error(err);
+        //console.log(responses);
+        try{
+            //Dont want to sent too many responses
+            socket.emit("historic_data", responses.slice((responses.length-5000), (responses.length-1)));
+        }catch(e){
+            //Looks like there isn't that many, a few will do!
+     	    socket.emit("historic_data", responses);
+        }
+    })
+
+}
+```
+
+The function performs a simple `find` operation on the `Tweet` object which we defined earlier. For richer querying capablity, please check out: http://mongoosejs.com/docs/queries.html
+
+As we want to send this data to the client when they first connect, we're going to also define a new function using our `socket`, which waits to hear for a new user connecting.
+
+```
+io.on('connection', function (socket) {
+
+     socket.on('load_data', function (data) {
+        console.log("Loading New Application User");
+        loadDatabaseData(socket);        
+    });
 
 
-
-
-
+});
+```
 
 
 
@@ -225,6 +257,6 @@ We can now update the function `preProcessData(tweet)` and add the call to the `
 **Tasks**
 
 * Improve the inserting of data so that it happens in batches, rather than one document at a time.
-* 
+* Improve the loading function, perform a more richer query to return the URLs of the images within the status object.
 
 
