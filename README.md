@@ -102,8 +102,7 @@ sudo npm install -g mongoose
 
 For more information and documentation about mongoose, please see: http://mongoosejs.com/
 
-Setting up the Mongoose connection
-=============
+*Setting up the Mongoose connection*
 
 In the example give, we are going to be working with the Twitter Stream JSON object. More details can be found here: https://dev.twitter.com/overview/api/tweets
 
