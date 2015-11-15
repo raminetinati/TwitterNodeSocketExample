@@ -105,6 +105,33 @@ Notes:
 
 *In the example provided in this , we are going to be working with the Twitter Stream JSON object. More details can be found here: https://dev.twitter.com/overview/api/tweets*
 
+**Creating a new MongoDB user**
+
+We want to create a new MongoDB user with readWrite access to the chosen database. First `SSH` into your server, then lets connect to MongoDB. Note: I'm assuming that you have an `admin` or `userAdmin` account and have `auth` enabled. if not please see: https://docs.mongodb.org/manual/reference/built-in-roles/#userAdminAnyDatabase
+
+We need to first connect to MongoDB using our admin user:
+
+```
+mongo -u username -p password --authenticationDatabase admin
+```
+
+Then we can connect to the new database we want to use, and create a new user
+
+```
+use twitter
+db.createUser(
+    {
+      user: "normalUser",
+      pwd: "password12345",
+      roles: [
+              "readWrite"
+	]
+    }
+)
+```
+
+We now have a user `normalUser` we can use to connect to the database `twitter`, with `readWrite` access to any collection.
+
 **Setting up the Mongoose connection**
 
 We need to import the `mongoose` package and then set up the database connect. If there is an error report it to the console, you'll probably want to know this
