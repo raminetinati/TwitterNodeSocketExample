@@ -119,6 +119,17 @@ db.once('open', function (callback) {
 });
 ```
 
+Next, we need to define the Document Object Schema that we'll be using for `mongoose`. This is important, as it will be the schema that we'll be loading and querying from the MongoStore.
+
+```
+var tweetDoc = new mongoose.Schema({
+  source: String,
+  status: String,
+});
+```
+
+In our example, we want to create a Schema which contains a `source` field, and the `status` field. The `source` field will be used to indicate where the data was harvested from, and the `status` will be the Twitter status being harvested.
+
 
 
 
