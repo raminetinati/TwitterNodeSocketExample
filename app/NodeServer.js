@@ -79,7 +79,24 @@ function preProcessData(tweet) {
 //We will look at saving and querying data.
 
 //first, import the necessary package
-var Twit = require('mongoose')
+var mongoose = require('mongoose');
+
+//set up the database connection. 
+//***NOTE: YOU NEED TO SET THE USERNAME/PASSWORD, HOSTNAME AND DATABASENAME***
+mongoose.connect('mongodb://username:password@hostname/databaseName');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+    console.log("connected to database");
+});
+
+//And we create a Schema for our new collection
+var tweetDoc = new mongoose.Schema({
+  source: String,
+  status: String,
+});
+
+
 
 
 
