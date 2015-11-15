@@ -164,9 +164,18 @@ function updateDatabaseWithTweets(data_rec, source_name){
 
 ```
 
-The function `updateDatabaseWithTweets`, takes in two parameters, the Twitter data, and the name of the source. Based on the `Tweet` Schema, we create a new Mongoose document `doc`, and populate it with the data from the functions parameters. We then call `doc.save()` in order to commit the new data!
+The function `updateDatabaseWithTweets(data_rec, source_name)`, takes in two parameters, the Twitter data, and the name of the source. Based on the `Tweet` Schema, we create a new Mongoose document `doc`, and populate it with the data from the functions parameters. We then call `doc.save()` in order to commit the new data!
 
+We can now update the function `preProcessData(tweet)` and add the call to the `updateDatabaseWithTweets(data_rec, source_name)` function within the the following section
 
+```
+...
+ if(dataParsed){
+        io.emit('tweets',tweet);
+        updateDatabaseWithTweets(tweet, "twitterHarvesterByRamine")
+    }
+...
+```
 
 
 
