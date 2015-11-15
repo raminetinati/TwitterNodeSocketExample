@@ -130,6 +130,13 @@ var tweetDoc = new mongoose.Schema({
 
 In our example, we want to create a Schema which contains a `source` field, and the `status` field. The `source` field will be used to indicate where the data was harvested from, and the `status` will be the Twitter status being harvested.
 
+Finally, link the Schema to the `Mongoose` model
+
+```
+var Message = mongoose.model('Message', tweetDoc); 
+```
+
+
 
 
 
