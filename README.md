@@ -247,9 +247,9 @@ io.on('connection', function (socket) {
 Finally, we need to make sure that this is part of the client code. We need to edit the client's `index.js` file located in '/client/js`
 
 ```
-socket3.emit("load_data","");
+socket.emit("load_data","");
 
-socket3.on('historic_data', function (databaseDump) {
+socket.on('historic_data', function (databaseDump) {
 
     for(var i=0; i<databaseDump.length; i++){
         console.log(databaseDump[i].status)
@@ -258,7 +258,7 @@ socket3.on('historic_data', function (databaseDump) {
 });
 ```
 
-
+As soon as the client connects, we want them to call the `socket` to notify the server that we want some data using the `load_data` route. We also need to wait for the `historic_data` route, which will be used to recieve the database data from the server.
 
 
 
