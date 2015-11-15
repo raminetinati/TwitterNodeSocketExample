@@ -133,12 +133,62 @@ In our example, we want to create a Schema which contains a `source` field, and 
 Finally, link the Schema to the `Mongoose` model
 
 ```
-var Message = mongoose.model('Message', tweetDoc); 
+var Tweet = mongoose.model('tweets', tweetDoc); 
 ```
 
+Ok, we're now good to go. We can start saving and querying the incoming data!
+
+**Saving Incomming Twitter Data to MongoDB**
+
+First we need to create a function which allows us to save data to the given collection:
+
+```
+function updateDatabaseWithTweets(data_rec, source_name){
+    try{
+        var data = data_rec.content;
+  		
+  		var doc = new Tweet({
+  			source: source_name,
+	    	status: data,
+            });
+            
+        doc.save(function(err, doc) {
+        if (err) return console.error(err);
+        });
+        //console.log("Added New Items: "+data);
+	
+    }catch(e){
+
+    }
+}
+
+```
+
+The function `updateDatabaseWithTweets`, takes in two parameters, the Twitter data, and the name of the source. Based on the `Tweet` Schema, we create a new Mongoose document `doc`, and populate it with the data from the functions parameters. We then call `doc.save()` in order to commit the new data!
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Tasks**
+
+* Improve the inserting of data so that it happens in batches, rather than one document at a time.
+* 
 
 
