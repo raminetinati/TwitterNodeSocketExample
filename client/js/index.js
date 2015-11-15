@@ -45,3 +45,17 @@ function main(){
 
     });
 };
+
+
+
+
+//For the MongoDB version:
+
+socket3.emit("load_data","");
+
+socket3.on('historic_data', function (databaseDump) {
+    
+    
+    
+    
+});
