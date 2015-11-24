@@ -119,6 +119,8 @@ function updateDatabaseWithTweets(data_rec, source_name){
 }
 
 
+//hint: you might want to checkout Model.find().stream() as this can be a better solution of you want to stream back your data!
+
 function loadDatabaseData(socket){
     var response = [];
     Tweet.find(function (err, responses) {
