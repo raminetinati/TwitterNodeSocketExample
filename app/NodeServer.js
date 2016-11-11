@@ -97,7 +97,7 @@ var tweetDoc = new mongoose.Schema({
   status: String,
 });
 
-var Message = mongoose.model('Message', tweetDoc); 
+var Tweet = mongoose.model('Message', tweetDoc); 
 
 function updateDatabaseWithTweets(data_rec, source_name){
     try{
